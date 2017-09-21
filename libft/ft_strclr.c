@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/14 14:05:31 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/15 11:16:46 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void	ft_strclr(char *s)
 {
-	char	*traverse;
-	int		i;
-
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	if (s)
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		ft_bzero(s, ft_strlen(s));
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
 }

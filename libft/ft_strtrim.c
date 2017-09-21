@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/14 14:10:44 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/23 16:36:40 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+static int		ft_iswhitespace(int c)
 {
-	char	*traverse;
-	int		i;
+	return (c == ' ' || c == '\n' || c == '\t');
+}
 
+char			*ft_strtrim(char const *s)
+{
+	int		start;
+	int		end;
 
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
-	{
-		ft_putchar(*traverse);
-		traverse++;
-	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+	if (!s)
+		return (NULL);
+	start = 0;
+	end = ft_strlen(s) - 1;
+	while (s[start] && ft_iswhitespace(s[start]))
+		start++;
+	while (s[end] && end > start && ft_iswhitespace(s[end]))
+		end--;
+	return (ft_strsub(s, start, end - start + 1));
 }

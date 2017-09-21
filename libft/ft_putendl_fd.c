@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/28 20:09:09 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/28 20:10:53 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char	*traverse;
-	int		i;
-
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	if (s)
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
 }

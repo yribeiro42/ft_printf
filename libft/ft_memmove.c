@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/28 20:09:09 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/28 20:10:46 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*traverse;
-	int		i;
+	unsigned char		*tmpdest;
+	unsigned char		*tmpsrc;
+	size_t				i;
 
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	tmpdest = (unsigned char*)dest;
+	tmpsrc = (unsigned char*)src;
+	i = 0;
+	if (tmpsrc < tmpdest)
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		while (n--)
+			tmpdest[n] = tmpsrc[n];
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+	else
+	{
+		while (i < n)
+		{
+			tmpdest[i] = tmpsrc[i];
+			i++;
+		}
+	}
+	return (dest);
 }

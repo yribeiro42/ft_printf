@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/14 14:05:31 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/15 11:26:28 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	char	*traverse;
-	int		i;
-
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	while (*s1 && *(unsigned char *)s1 == *(unsigned char *)s2)
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		s1++;
+		s2++;
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

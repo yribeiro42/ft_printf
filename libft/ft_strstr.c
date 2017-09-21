@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/15 09:50:22 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/15 11:28:07 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	char	*traverse;
-	int		i;
+	int i;
+	int j;
 
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	i = 0;
+	if (!*needle)
+		return ((char *)haystack);
+	while (haystack[i] != '\0')
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		j = 0;
+		while (needle[j] == haystack[i + j])
+		{
+			if (needle[j + 1] == '\0')
+			{
+				return ((char *)haystack + i);
+			}
+			j++;
+		}
+		i++;
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+	return (NULL);
 }

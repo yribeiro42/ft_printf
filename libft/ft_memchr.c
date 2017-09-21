@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/14 14:05:31 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/15 11:24:59 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*traverse;
-	int		i;
+	unsigned char	*tmp;
 
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	tmp = (unsigned char *)s;
+	while (n--)
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		if (*tmp == (unsigned char)c)
+			return (tmp);
+		if (n)
+			tmp++;
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+	return (NULL);
 }

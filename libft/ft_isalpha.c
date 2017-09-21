@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/14 14:05:31 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/23 16:36:19 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+static int	ft_isupper(int c)
 {
-	char	*traverse;
-	int		i;
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
+}
 
+static int	ft_islower(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
+}
 
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
-	{
-		ft_putchar(*traverse);
-		traverse++;
-	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+int			ft_isalpha(int c)
+{
+	if (ft_islower(c) || ft_isupper(c))
+		return (1);
+	return (0);
 }

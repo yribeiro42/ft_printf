@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2017/03/01 13:30:16 by yribeiro          #+#    #+#             */
+/*   Updated: 2017/04/27 11:48:50 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include "libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
 
-int		ft_printf(const char *format, ...)
-{
-	char	*traverse;
-	int		i;
+# define BUFF_SIZE 100
+# define EOL	'\n'
 
+int		get_next_line(const int fd, char **line);
 
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
-	{
-		ft_putchar(*traverse);
-		traverse++;
-	}
-	ft_putchar(*traverse);
-
-	va_end(args);
-}
+#endif

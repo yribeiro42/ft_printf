@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/28 20:09:09 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/28 20:13:00 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	char	*traverse;
-	int		i;
+	size_t s2_size;
 
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	s2_size = ft_strlen(s2);
+	if (!*s2)
+		return ((char *)s1);
+	while (n && *s1)
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		if (n < s2_size)
+			return (NULL);
+		if (*s1 == *s2)
+		{
+			if (ft_strncmp(s1, s2, s2_size) == 0)
+				return ((char *)s1);
+		}
+		s1++;
+		n--;
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+	return (NULL);
 }

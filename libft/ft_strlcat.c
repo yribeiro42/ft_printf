@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 17:36:34 by yribeiro         ###   ########.fr       */
+/*   Created: 2016/11/14 14:05:31 by yribeiro          #+#    #+#             */
+/*   Updated: 2016/11/15 11:27:03 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char	*traverse;
-	int		i;
+	size_t	destlen;
+	size_t	srclen;
+	size_t	i;
 
-
-	va_list args;
-	va_start(args, format);
-	traverse = format;
-	while (*traverse != '%')
+	destlen = ft_strlen(dest);
+	srclen = ft_strlen(src);
+	i = 0;
+	if (size < destlen)
+		return (srclen + size);
+	while (destlen + i < size - 1 && src[i])
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		dest[destlen + i] = src[i];
+		i++;
 	}
-	ft_putchar(*traverse);
-
-	va_end(args);
+	dest[destlen + i] = '\0';
+	return (destlen + srclen);
 }
