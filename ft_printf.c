@@ -3,25 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 21:33:36 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/03 14:44:24 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int 	process()
+int 	process(va_list *args, char *format, size_t ret)
 {
-	traverse = format;
-	while (*traverse != '%')
+	char	*lookup;
+
+	lookup = ft_strchr(format, '%');
+	if (*format == '\0')
+		return (ret);
+	if (!*lookup)
 	{
-		ft_putchar(*traverse);
-		traverse++;
+		ft_putstr(format);
+		ret = ft_strlen(format);
 	}
-	traverse++;
-	parse_flags(*format, )
+	else
+	{
+		
+		return (process(args, format, ret));
+	}
+
+
 }
 
 int		ft_printf(char *format, ...)
@@ -31,8 +40,7 @@ int		ft_printf(char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	size = process(args, format);
-	
+	size = process(&args, format, 0);
 	va_end(args);
 	return (size);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/09/21 20:12:28 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/03 17:00:38 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct 	s_parser
 	int			space;
 	int			htag;
 	int			zero;
+	int			width;
 	
 }				t_parser;
 
