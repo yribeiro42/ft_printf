@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/06 14:00:00 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/06 15:00:09 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 typedef	enum s_specifier
 {
-	STRING, POINTER, DECIMAL, OCTAL, UNSIGNEDECI, LOWERHEX, UPPERHEX, CHARACTER
+	STRING, POINTER, DECIMAL, OCTAL, UNSIGNEDECI, LOWERHEX, UPPERHEX, CHARACTER,
+	ERROR
 }			t_specifier;
 
 typedef enum s_length
@@ -47,3 +48,8 @@ char	*parse_flags(char **format, t_parser *p);
 char	*parse_width(char **format, t_parser *p);
 char	*parse_precision(char **format, t_parser *p);
 char	*parse_length(char **format, t_parser *p);
+
+// specifier //
+
+t_specifier	return_specifier(char format);
+int		parse_specifier(char **format, t_parser *p);

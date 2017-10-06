@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/06 13:45:39 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/06 14:59:56 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ t_specifier	return_specifier(char format)
 		return (UPPERHEX);
 	if (format == 'c' || format == 'C')
 		return (CHARACTER);
+	else
+		return (ERROR);
 }
 
-int		parse_specifier(char **format)
+int		parse_specifier(char **format, t_parser *p)
 {
-
+	p->specifier = return_specifier(**format);
+	return (0);
 }

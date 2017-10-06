@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:17:00 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/06 13:58:42 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/06 14:33:59 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,24 +70,24 @@ char	*parse_length(char **format, t_parser *p)
 {
 	if (**format == 'l' && *(*format + 1) == 'l')
 	{
-		p->length = ll;
+		p->length = LL;
 		*(*format) = *(*format + 2);
 	}
 	else if (**format == 'h' && *(*format + 1) == 'h')
 	{
-		p->length = hh;
+		p->length = HH;
 		*(*format) = *(*format + 2);
 	}
 	else if (**format == 'h' || **format == 'l' || **format == 'j' || **format == 'z')
 	{
 		if (**format == 'h')
-			p->length = h;
+			p->length = H;
 		else if (**format == 'l')
-			p->length = l;
+			p->length = L;
 		else if (**format == 'j')
-			p->length = j;
+			p->length = J;
 		else if (**format == 'z')
-			p->length = z;
+			p->length = Z;
 		return ((*format)++);
 	}
 	return (*format);
