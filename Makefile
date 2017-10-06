@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
+#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/21 17:37:15 by yribeiro          #+#    #+#              #
-#    Updated: 2017/09/21 20:12:30 by yribeiro         ###   ########.fr        #
+#    Updated: 2017/10/05 13:25:16 by anonymous        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_printf
 CFLAGS = -Wall -Wextra -Werror
-SRC = parser.c ft_printf.c
+SRC = parser.c ft_printf.c main.c
 OBJ = $(SRC:.c=.o)
 LIBFT_H = -Ilibft/
 LIBFT = libft/libft.a
