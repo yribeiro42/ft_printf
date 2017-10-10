@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/06 16:17:34 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/10 20:02:21 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,17 @@
 
 // %[flags][width][.precision][length]specifier
 
+void	ft_copyuntil(char *str, char until)
+{
+	while (*str && *str != until)
+	{
+		ft_putchar(*str);
+		str++;
+	}
+}
+
 int		parser(char **format, t_parser *p)
 {
-	int		ret;
 	if ((*(*format + 1)) == '\0')
 		return (0);
 	parse_flags(format, p);
@@ -24,6 +32,7 @@ int		parser(char **format, t_parser *p)
 	parse_precision(format, p);
 	parse_length(format, p);
 	parse_specifier(format, p);
+	(*format)++;
 	return (0);
 }
 
@@ -35,10 +44,15 @@ int 	process(va_list *args, char *format, size_t ret)
 	lookup = ft_strchr(format, '%');
 	if (*format == '\0')
 		return (ret);
-	if (!*lookup)
+	if (!lookup)
 	{
 		ft_putstr(format);
 		return (ft_strlen(format));
+	}
+	else if (lookup > format)
+	{
+		ft_copyuntil(format, *lookup);
+		return (process(args, lookup, ret));
 	}
 	else
 	{
@@ -50,12 +64,12 @@ int 	process(va_list *args, char *format, size_t ret)
 
 int		ft_printf(char *format, ...)
 {
-	int		size;
+	int		ret;
 
 	va_list args;
 
 	va_start(args, format);
-	size = process(&args, format, 0);
+	ret = process(&args, format, 0);
 	va_end(args);
-	return (size);
+	return (ret);
 }
