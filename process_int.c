@@ -22,7 +22,7 @@ intmax_t	get_number_length(t_parser *p, va_list args)	 // hh h l ll j z
 	return (number);
 }
 
-intmax_t	process_int(t_parser *p, va_list args)
+void	process_int(t_parser *p, va_list args)
 {
 	intmax_t	number;
 	char 		*str;

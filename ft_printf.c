@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/12 14:31:06 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/12 14:54:38 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	ft_copyuntil(char *str, char until)
 
 int		parser(char **format, t_parser *p)
 {
-	if ((*(*format + 1)) == '\0')
-		return (0);
+	(*format)++;
 	parse_flags(format, p);
 	parse_width(format, p);
 	parse_precision(format, p);

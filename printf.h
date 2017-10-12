@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/12 14:10:58 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/12 14:42:24 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,4 @@ char	*parse_length(char **format, t_parser *p);
 
 t_specifier	return_specifier(char format);
 int		parse_specifier(char **format, t_parser *p);
+void	process_int(t_parser *p, va_list args);

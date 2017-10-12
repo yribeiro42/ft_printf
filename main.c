@@ -2,6 +2,6 @@
 
 int	main(void)
 {
-	ft_printf("test %h\n", 56);
+	ft_printf("test %-d\n", 56);
 	return (0);
 }
