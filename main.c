@@ -2,10 +2,6 @@
 
 int	main(void)
 {
-
-	//printf("PRINTF :\n");
-	//printf("%d\n", printf(test, c));
-	printf("FT_PRINTF\n");
-	ft_printf("test %d\n");
+	ft_printf("test %h\n", 56);
 	return (0);
 }

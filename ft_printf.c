@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/10 20:02:21 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/12 14:31:06 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int 	process(va_list *args, char *format, size_t ret)
 	else if (lookup > format)
 	{
 		ft_copyuntil(format, *lookup);
+		printf("ok\n");
 		return (process(args, lookup, ret));
 	}
 	else

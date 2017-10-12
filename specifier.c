@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/10 20:04:46 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/11 16:21:52 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_specifier	return_specifier(char format)
 int		parse_specifier(char **format, t_parser *p)
 {
 	p->specifier = return_specifier(**format);
-	printf("specifier = %d\n", p->specifier);
+	if (p->specifier == DECIMAL)
+		printf("specifier = %d\n", p->specifier);
 	return (0);
 }

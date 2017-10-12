@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:17:00 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/06 14:33:59 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/11 16:38:05 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*parse_precision(char **format, t_parser *p)
 	return (*format);
 }
 
-char	*parse_length(char **format, t_parser *p)
+char	*parse_length(char **format, t_parser *p)			// hh h l ll j z
 {
 	if (**format == 'l' && *(*format + 1) == 'l')
 	{
