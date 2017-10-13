@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:17:00 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/12 15:32:37 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/13 14:24:07 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*parse_flags(char **format, t_parser *p)
 		|| **format == '0')
 	{
 		if (**format == '-')
-			p->left_justify = 1;
+			p->left = 1;
 		else if(**format == '+')
-			p->sign = 1;
+			p->showsign = 1;
 		else if(**format == ' ')
 			p->space = 1;
 		else if(**format == '#')

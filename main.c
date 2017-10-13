@@ -2,6 +2,7 @@
 
 int	main(void)
 {
-	ft_printf("test %.3ld\n", 56);
+	printf(   YEL "%.5d\n" RESET, 42);
+	ft_printf(GRN "%.5d\n" RESET, 42);
 	return (0);
 }

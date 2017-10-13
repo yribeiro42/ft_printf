@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/12 20:19:59 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/13 15:13:15 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "libft/libft.h"
-
+#include "colors.h"
 typedef	enum s_specifier
 {
 	STRING, POINTER, DECIMAL, OCTAL, UNSIGNEDECI, LOWERHEX, UPPERHEX, CHARACTER,
@@ -29,8 +29,8 @@ typedef enum s_length
 
 typedef struct 	s_parser
 {
-	int			left_justify;
-	int			sign;
+	int			left;
+	int			showsign;
 	int			space;
 	int			htag;
 	int			zero;
@@ -54,4 +54,7 @@ char	*parse_length(char **format, t_parser *p);
 
 t_specifier	return_specifier(char format);
 int		parse_specifier(char **format, t_parser *p);
+
+// process //
+
 void	process_int(t_parser *p, va_list **args);

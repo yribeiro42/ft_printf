@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/12 21:46:58 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/13 14:28:20 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	check_parsing(t_parser *p)
 {
-	if (p->left_justify)
+	if (p->left)
 		printf("FLAGS OK\n");
 	if (p->width)
 		printf("WIDTH OK\n");
@@ -58,6 +58,7 @@ int 	process(va_list *args, char *format)
 	ft_copyuntil(format, '%');
 	parser(&lookup, &p);
 	process_int(&p, &args);
+	return (0);
 }
 
 int		ft_printf(char *format, ...)

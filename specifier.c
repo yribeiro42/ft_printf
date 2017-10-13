@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   specifier.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/12 15:14:20 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/13 13:46:26 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		parse_specifier(char **format, t_parser *p)
 	p->specifier = return_specifier(**format);
 	if (p->specifier == DECIMAL)
 	{
-		printf("specifier = %d\n", p->specifier);
+		//printf("specifier = %d\n", p->specifier);
 	}
 	return (0);
 }
