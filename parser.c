@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:17:00 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/12 14:37:15 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/12 15:32:37 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*parse_width(char **format, t_parser *p)
 	return (*format);
 }
 
-char	*parse_precision(char **format, t_parser *p)
+char	*parse_precision(char **format, t_parser *p) // .
 {
 	int ret;
 

@@ -6,13 +6,24 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/12 14:54:38 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/12 21:46:58 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
 // %[flags][width][.precision][length]specifier
+
+void	check_parsing(t_parser *p)
+{
+	if (p->left_justify)
+		printf("FLAGS OK\n");
+	if (p->width)
+		printf("WIDTH OK\n");
+	if (p->precision)
+		printf("PRECISION OK\n");
+	printf("LENGTH = %d\n", p->length);
+}
 
 void	ft_copyuntil(char *str, char until)
 {
@@ -23,43 +34,30 @@ void	ft_copyuntil(char *str, char until)
 	}
 }
 
-int		parser(char **format, t_parser *p)
+int		parser(char **lookup, t_parser *p)
 {
-	(*format)++;
-	parse_flags(format, p);
-	parse_width(format, p);
-	parse_precision(format, p);
-	parse_length(format, p);
-	parse_specifier(format, p);
-	(*format)++;
+	(*lookup)++;
+	parse_flags(lookup, p);
+	parse_width(lookup, p);
+	parse_precision(lookup, p);
+	parse_length(lookup, p);
+	parse_specifier(lookup, p);
+	//check_parsing(p);
+	(*lookup)++;
 	return (0);
 }
 
-int 	process(va_list *args, char *format, size_t ret)
+int 	process(va_list *args, char *format)
 {
-	char		*lookup;
-	t_parser	p;
+	t_parser p;
+	char	*lookup;
 
 	lookup = ft_strchr(format, '%');
-	if (*format == '\0')
-		return (ret);
 	if (!lookup)
-	{
 		ft_putstr(format);
-		return (ft_strlen(format));
-	}
-	else if (lookup > format)
-	{
-		ft_copyuntil(format, *lookup);
-		printf("ok\n");
-		return (process(args, lookup, ret));
-	}
-	else
-	{
-		ft_bzero(&p, sizeof(p));
-		parser(&format, &p);
-		return (process(args, format, ret));
-	}
+	ft_copyuntil(format, '%');
+	parser(&lookup, &p);
+	process_int(&p, &args);
 }
 
 int		ft_printf(char *format, ...)
@@ -69,7 +67,7 @@ int		ft_printf(char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	ret = process(&args, format, 0);
+	ret = process(&args, format);
 	va_end(args);
 	return (ret);
 }

@@ -6,11 +6,11 @@
 #    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/21 17:37:15 by yribeiro          #+#    #+#              #
-#    Updated: 2017/10/12 14:16:41 by anonymous        ###   ########.fr        #
+#    Updated: 2017/10/12 15:24:16 by anonymous        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf
+NAME = printf
 #CFLAGS = -Wall -Wextra -Werror
 SRC = parser.c ft_printf.c main.c specifier.c process_int.c
 OBJ = $(SRC:.c=.o)
