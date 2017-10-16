@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/13 17:33:31 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/16 20:39:47 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int 	process(va_list *args, char *format)
 	ft_copyuntil(format, '%');
 	ft_bzero(&p, sizeof(t_parser));
 	parser(&lookup, &p);
-	process_int(&p, &args);
+	process_pointer(&p, &args);
 	return (0);
 }
 

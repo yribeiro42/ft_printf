@@ -22,37 +22,6 @@ intmax_t	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
 	return (number);
 }
 
-void	*process_sign(char **str)
-{
-	if (**str != '-')
-		*str = ft_strjoin("+", *str);
-}
-
-
-void	*process_width(char **str, t_parser *p)
-{
-	while (ft_strlen(*str) < p->width)
-	{
-		*str = ft_strjoin(" ", *str);
-	}
-}
-
-void	*process_zero(char **str, t_parser *p)
-{
-	while (ft_strlen(*str) < p->width)
-	{
-		*str = ft_strjoin("0", *str);
-	}
-}
-
-void	*process_precision(char **str, t_parser *p)
-{
-	while (ft_strlen(*str) < p->precision)
-	{
-		*str = ft_strjoin("0", *str);
-	}
-}
-
 void	process_int(t_parser *p, va_list **args)
 {
 	intmax_t	number;
