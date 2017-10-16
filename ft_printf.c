@@ -3,27 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/13 14:28:20 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/13 17:33:31 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
 // %[flags][width][.precision][length]specifier
-
-void	check_parsing(t_parser *p)
-{
-	if (p->left)
-		printf("FLAGS OK\n");
-	if (p->width)
-		printf("WIDTH OK\n");
-	if (p->precision)
-		printf("PRECISION OK\n");
-	printf("LENGTH = %d\n", p->length);
-}
 
 void	ft_copyuntil(char *str, char until)
 {
@@ -42,7 +31,6 @@ int		parser(char **lookup, t_parser *p)
 	parse_precision(lookup, p);
 	parse_length(lookup, p);
 	parse_specifier(lookup, p);
-	//check_parsing(p);
 	(*lookup)++;
 	return (0);
 }
@@ -56,6 +44,7 @@ int 	process(va_list *args, char *format)
 	if (!lookup)
 		ft_putstr(format);
 	ft_copyuntil(format, '%');
+	ft_bzero(&p, sizeof(t_parser));
 	parser(&lookup, &p);
 	process_int(&p, &args);
 	return (0);

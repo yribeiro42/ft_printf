@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	printf(   YEL "%.5d\n" RESET, 42);
-	ft_printf(GRN "%.5d\n" RESET, 42);
+	printf(   YEL "%05d\n" RESET, 10);
+	ft_printf(GRN "%05d\n" RESET, 10);
 	return (0);
 }
