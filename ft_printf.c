@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/16 20:39:47 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/20 19:06:21 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,20 @@ int 	process(va_list *args, char *format)
 {
 	t_parser p;
 	char	*lookup;
+	int		ret;
 
 	lookup = ft_strchr(format, '%');
 	if (!lookup)
 		ft_putstr(format);
-	ft_copyuntil(format, '%');
-	ft_bzero(&p, sizeof(t_parser));
-	parser(&lookup, &p);
-	process_pointer(&p, &args);
-	return (0);
+	else
+	{
+		ft_copyuntil(format, '%');
+		ft_bzero(&p, sizeof(t_parser));
+		parser(&lookup, &p);
+		ret = process_pointer(&p, &args);
+	}
+	printf("%d\n", ret);
+	return (ret);
 }
 
 int		ft_printf(char *format, ...)
@@ -59,5 +64,6 @@ int		ft_printf(char *format, ...)
 	va_start(args, format);
 	ret = process(&args, format);
 	va_end(args);
+	while(1);
 	return (ret);
 }

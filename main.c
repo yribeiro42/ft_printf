@@ -2,10 +2,9 @@
 
 int	main(void)
 {
-	int n = 10;
-	int *p_n = &n;
+	int	n;
 
-	printf(   YEL "%p\n" RESET, p_n);
-	ft_printf(GRN "%p\n" RESET, p_n);
+	printf("%c\n", 0);
+	ft_printf("%c", 0);
 	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
+#    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/21 17:37:15 by yribeiro          #+#    #+#              #
-#    Updated: 2017/10/16 20:18:16 by anonymous        ###   ########.fr        #
+#    Updated: 2017/10/20 15:06:20 by yribeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,12 @@ LIBFT = libft/libft.a
 
 all: $(NAME)
 
-$(NAME):
+%.o : %.c
+	gcc $(CFLAGS) $(LIBFT_H) -c $?
+
+$(NAME): $(OBJ)
 	make -C libft/
-	gcc $(CFLAGS) $(LIBFT_H) -c $(SRC)
-	gcc $(CFLAGS) -o $(NAME) $(OBJ) -lm -L libft/ -lft
+	gcc $(CFLAGS) -o $(NAME) $^ -lm -L libft/ -lft
 
 clean:
 	rm -rf $(OBJ)

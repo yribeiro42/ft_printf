@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 11:30:11 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/04/24 16:38:10 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/20 15:03:26 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddend(t_list **alst, t_list *node);
 char				*ft_strndup(char *s, size_t n);
 int					get_next_line(const int fd, char **line);
+char				*ft_itoa_base(int value, int base);
 
 
 #endif

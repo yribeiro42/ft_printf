@@ -6,7 +6,7 @@
 #    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 12:49:01 by yribeiro          #+#    #+#              #
-#    Updated: 2017/04/27 11:47:56 by yribeiro         ###   ########.fr        #
+#    Updated: 2017/10/20 15:03:43 by yribeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ FILES		= 	ft_memset.c \
 				ft_lstaddend.c \
 				ft_strndup.c \
 				get_next_line.c \
+				ft_itoa_base.c \
 				
 
 OBJ			= $(FILES:%.c=%.o)

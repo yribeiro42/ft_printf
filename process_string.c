@@ -7,8 +7,11 @@ void	process_string(t_parser *p, va_list **args)
 	int		offset;
 
 	str = va_arg(**args, char*);
+	if (!str)
+		str = "(null)";
+	if (p->width)
+		offset = p->width - ft_strlen(str);
 	addstr = ft_strnew(offset);
-	offset = p->width - ft_strlen(str);
 	str = ft_strdup(str);
 	ft_memset(addstr, ' ', offset);
 	if (p->width && p->left)

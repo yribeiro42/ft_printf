@@ -2,13 +2,13 @@
 
 // sS p oO uU x X cC dDi
 
-void	*process_sign(char **str)
+void	process_sign(char **str)
 {
 	if (**str != '-')
 		*str = ft_strjoin("+", *str);
 }
 
-void	*process_width(char **str, t_parser *p)
+void	process_width(char **str, t_parser *p)
 {
 	if (p->specifier == 2 || p->specifier == 0)
 	{
@@ -17,7 +17,7 @@ void	*process_width(char **str, t_parser *p)
 	}
 }
 
-void	*process_zero(char **str, t_parser *p)
+void	process_zero(char **str, t_parser *p)
 {
 	while (ft_strlen(*str) < p->width)
 	{
@@ -25,7 +25,7 @@ void	*process_zero(char **str, t_parser *p)
 	}
 }
 
-void	*process_precision(char **str, t_parser *p)
+void	process_precision(char **str, t_parser *p)
 {
 	while (ft_strlen(*str) < p->precision)
 	{
