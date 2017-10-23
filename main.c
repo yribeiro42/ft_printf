@@ -2,9 +2,7 @@
 
 int	main(void)
 {
-	int	n;
-
-	printf("%c\n", 0);
-	ft_printf("%c", 0);
+	printf("test\n");
+	ft_printf("test");
 	return (0);
 }

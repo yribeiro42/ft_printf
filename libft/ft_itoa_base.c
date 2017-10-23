@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/20 15:01:45 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/20 18:48:46 by yribeiro         ###   ########.fr       */
+/*   Created: 2017/10/23 15:01:58 by yribeiro          #+#    #+#             */
+/*   Updated: 2017/10/23 15:03:28 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int      compte(unsigned long nbr, int base)
+static int		compte(unsigned long nbr, int base)
 {
 	int ret;
 
@@ -25,15 +25,15 @@ static int      compte(unsigned long nbr, int base)
 	return (ret);
 }
 
-char            *ft_itoa_base(unsigned int nbr, int base)
+char			*ft_itoa_base(unsigned int nbr, int base)
 {
-	char		*retour;
+	char	*retour;
 	int		nb;
 	int		i;
-	char		tab[17];
+	char	tab[17];
 
 	if (nbr == 0)
-		return (ft_alloc_str("0"));
+		return (ft_strdup("0"));
 	ft_strcpy(tab, "0123456789abcdef");
 	nb = compte(nbr, base);
 	retour = malloc(nb + 1);

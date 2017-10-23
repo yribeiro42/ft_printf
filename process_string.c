@@ -1,6 +1,6 @@
 #include "printf.h"
 
-void	process_string(t_parser *p, va_list **args)
+int		process_string(t_parser *p, va_list **args)
 {
 	char	*str;
 	char	*addstr;
@@ -19,4 +19,5 @@ void	process_string(t_parser *p, va_list **args)
 	if(p->width)
 		process_width(&str, p);
 	ft_putstr(str);
+	return (ft_strlen(str));
 }

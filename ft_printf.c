@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/20 19:06:21 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/23 15:25:59 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,17 @@ int 	process(va_list *args, char *format)
 
 	lookup = ft_strchr(format, '%');
 	if (!lookup)
+	{
 		ft_putstr(format);
+		return (ft_strlen(format));
+	}
 	else
 	{
 		ft_copyuntil(format, '%');
 		ft_bzero(&p, sizeof(t_parser));
 		parser(&lookup, &p);
-		ret = process_pointer(&p, &args);
+		ret = get_specifier(&p, &args);
 	}
-	printf("%d\n", ret);
 	return (ret);
 }
 
@@ -63,7 +65,7 @@ int		ft_printf(char *format, ...)
 
 	va_start(args, format);
 	ret = process(&args, format);
+	printf("\n[%d] \n", ret);
 	va_end(args);
-	while(1);
 	return (ret);
 }

@@ -22,7 +22,7 @@ intmax_t	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
 	return (number);
 }
 
-void	process_int(t_parser *p, va_list **args)
+int		process_int(t_parser *p, va_list **args)
 {
 	intmax_t	number;
 	char 		*str;
@@ -39,4 +39,5 @@ void	process_int(t_parser *p, va_list **args)
 	if (p->width)
 		process_width(&str, p);
 	ft_putstr(str);
+	return (ft_strlen(str));
 }
