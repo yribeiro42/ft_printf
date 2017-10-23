@@ -27,6 +27,7 @@ int		process_int(t_parser *p, va_list **args)
 	intmax_t	number;
 	char 		*str;
 
+	number = 0;
 	if (p->specifier == DECIMAL)
 		number = get_number_length(p, args);
 	str = ft_itoa(number);

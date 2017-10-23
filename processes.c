@@ -10,7 +10,7 @@ void	process_sign(char **str)
 
 void	process_width(char **str, t_parser *p)
 {
-	if (p->specifier == 2 || p->specifier == 0)
+	if (p->specifier == DECIMAL || p->specifier == STRING || p->specifier == UNSIGNEDECI)
 	{
 		while (ft_strlen(*str) < p->width)
 			*str = ft_strjoin(" ", *str);

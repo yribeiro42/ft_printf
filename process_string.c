@@ -7,6 +7,7 @@ int		process_string(t_parser *p, va_list **args)
 	int		offset;
 
 	str = va_arg(**args, char*);
+	offset = 0;
 	if (!str)
 		str = "(null)";
 	if (p->width)

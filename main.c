@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	printf("test\n");
-	ft_printf("test");
+	printf("%.10u\n", 42);
+	ft_printf("%.10u", 42);
 	return (0);
 }

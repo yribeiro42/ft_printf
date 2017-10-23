@@ -4,9 +4,10 @@
 int		process_pointer(t_parser *p, va_list **args)
 {
 	void	*ptr;
-	int ret;
+	int 	ret;
 	char	*retptr;
 
+	(void)p;
 	ptr = va_arg(**args, void*);
 	retptr = ft_itoa_base((unsigned int)ptr, 16);
 	ft_putstr("0x");
