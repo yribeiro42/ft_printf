@@ -6,7 +6,7 @@
 #    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/21 17:37:15 by yribeiro          #+#    #+#              #
-#    Updated: 2017/10/20 15:06:20 by yribeiro         ###   ########.fr        #
+#    Updated: 2017/10/23 15:34:09 by yribeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,11 @@ $(NAME): $(OBJ)
 	gcc $(CFLAGS) -o $(NAME) $^ -lm -L libft/ -lft
 
 clean:
+	make clean -C libft/
 	rm -rf $(OBJ)
 
 fclean: clean
+	make fclean -C libft/
 	rm -rf $(NAME)
 
 re: fclean all
