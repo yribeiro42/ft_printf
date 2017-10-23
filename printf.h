@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/23 17:35:36 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/23 22:42:22 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef	enum s_specifier
 {
 	STRING, POINTER, DECIMAL, OCTAL, UNSIGNEDECI, LOWERHEX, UPPERHEX, CHARACTER,
-	ERROR
+	WIDECHAR, WIDESTR, ERROR
 }			t_specifier;
 
 typedef enum s_length
@@ -71,3 +71,5 @@ int		process_octal(t_parser *p, va_list **args);
 int		process_hex(t_parser *p, va_list **args);
 char	*ft_strupper(char *s);
 int		process_unsigned(t_parser *p, va_list **args);
+int		process_wchar(t_parser *p, va_list **args);
+int		process_character(t_parser *p, va_list **args);

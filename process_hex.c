@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:39:35 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/23 17:23:57 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/23 22:55:50 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ int		process_hex(t_parser *p, va_list **args)
 
 	number = va_arg(**args, unsigned int);
 	retnbr = ft_itoa_base(number, 16);
+	if (p->htag == 1)
+		ft_putstr("0x");
+	if (p->htag == 1 && p->specifier == UPPERHEX)
+		ft_putstr("0X");
 	if (p->specifier == UPPERHEX)
 		retnbr = ft_strupper(retnbr);
 	ft_putstr(retnbr);

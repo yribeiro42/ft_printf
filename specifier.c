@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/23 20:52:45 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/23 22:42:15 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ t_specifier	return_specifier(char format)
 		return (LOWERHEX);
 	if (format == 'X')
 		return (UPPERHEX);
-	if (format == 'c' || format == 'C')
+	if (format == 'c')
 		return (CHARACTER);
+	if (format == 'C')
+		return (WIDECHAR);
 	else
 		return (ERROR);
 }
@@ -40,9 +42,8 @@ t_specifier	return_specifier(char format)
 int		parse_specifier(char **format, t_parser *p)
 {
 	p->specifier = return_specifier(**format);
-	//((*format)++);
 	if (p->specifier == ERROR)
-		//ft_putstr_fd("Specifier error", 2);
+		ft_putstr_fd("Specifier error", 2);
 	return (0);
 }
 
@@ -63,5 +64,9 @@ int		get_specifier(t_parser *p, va_list **args)
 		read = process_hex(p, args);
 	else if (p->specifier == UNSIGNEDECI)
 		read = process_unsigned(p, args);
+	else if (p->specifier == WIDECHAR)
+		read = process_wchar(p, args);
+	else if (p->specifier == CHARACTER)
+		read = process_character(p, args);
 	return (read);
 }

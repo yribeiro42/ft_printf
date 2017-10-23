@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/23 20:46:00 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/23 22:23:53 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,10 @@ int 	process(va_list *args, char *format)
 	t_parser p;
 	char	*lookup;
 	int		ret;
-	int		i;
 	char	c;
 
-	i = 0;
 	while (*format != '\0')
 	{
-		//printf("[%c]\n", *format);
 		if (*format == '%')
 		{
 			ft_bzero(&p, sizeof(t_parser));

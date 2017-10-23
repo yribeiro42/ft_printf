@@ -2,7 +2,10 @@
 
 int	main(void)
 {
-	//printf("%d\n", 42);
-	ft_printf("test%d", 42);
+	char c;
+
+	c = 65;
+	printf("%#o\n", 42);
+	ft_printf("%#o\n", 42);
 	return (0);
 }
