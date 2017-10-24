@@ -2,10 +2,8 @@
 
 int	main(void)
 {
-	char c;
-
-	c = 65;
-	printf("%#o\n", 42);
-	ft_printf("%#o\n", 42);
+	//printf("%-#6o", 2500);
+	//printf("\n");
+	ft_printf("%-#6o", 2500);
 	return (0);
 }

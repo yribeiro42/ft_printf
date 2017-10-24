@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 17:00:55 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/23 22:23:53 by anonymous        ###   ########.fr       */
+/*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
+/*   Updated: 2017/10/24 12:47:29 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		parser(char **lookup, t_parser *p)
 	parse_precision(lookup, p);
 	parse_length(lookup, p);
 	parse_specifier(lookup, p);
-	//(*lookup)++;
 	return (0);
 }
 
@@ -61,12 +60,17 @@ int		parser(char **lookup, t_parser *p)
 int 	process(va_list *args, char *format)
 {
 	t_parser p;
-	char	*lookup;
 	int		ret;
-	char	c;
+	int		chrs;
 
+	chrs = 0;
 	while (*format != '\0')
 	{
+		if (*format == '%' && *(format + 1) == '%')
+		{
+			ft_putchar('%');
+			format = format + 2;
+		}
 		if (*format == '%')
 		{
 			ft_bzero(&p, sizeof(t_parser));
@@ -76,11 +80,11 @@ int 	process(va_list *args, char *format)
 		else
 		{
 			ft_putchar(*format);
-			ret++;
+			chrs++;
 		}
 		format++;
 	}
-	return (ret);
+	return (ret + chrs);
 }
 
 int		ft_printf(char *format, ...)

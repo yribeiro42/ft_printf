@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_wchar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/23 22:08:40 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/23 22:45:28 by anonymous        ###   ########.fr       */
+/*   Created: 2017/10/24 12:07:32 by yribeiro          #+#    #+#             */
+/*   Updated: 2017/10/24 12:08:54 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ int		process_wchar(t_parser *p, va_list **args)
 	ret = va_arg(**args, wchar_t);
 	ft_putwchar(ret);
 	ret = ft_wcharsize(ret);
+	return (ret);
 }

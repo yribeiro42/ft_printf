@@ -10,11 +10,18 @@ void	process_sign(char **str)
 
 void	process_width(char **str, t_parser *p)
 {
-	if (p->specifier == DECIMAL || p->specifier == STRING || p->specifier == UNSIGNEDECI)
+	if (p->left)
 	{
-		while (ft_strlen(*str) < p->width)
-			*str = ft_strjoin(" ", *str);
+		int		offset;
+		char	*addstr;
+		offset = p->width - ft_strlen(*str);
+		addstr = ft_strnew(offset);
+		*str = strdup(*str);
+		ft_memset(addstr, ' ', offset);
+		*str = ft_strjoin(*str, addstr);
 	}
+	while (ft_strlen(*str) < p->width)
+		*str = ft_strjoin(" ", *str);
 }
 
 void	process_zero(char **str, t_parser *p)
