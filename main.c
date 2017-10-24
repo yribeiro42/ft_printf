@@ -2,8 +2,8 @@
 
 int	main(void)
 {
-	//printf("%-#6o", 2500);
+	//printf(""%-10.5o", 2500);
 	//printf("\n");
-	ft_printf("%-#6o", 2500);
+	ft_printf("%-10.5o", 2500);
 	return (0);
 }
