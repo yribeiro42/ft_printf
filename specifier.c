@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   specifier.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/24 19:37:42 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/24 21:15:26 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ t_specifier	return_specifier(char format)
 int		parse_specifier(char **format, t_parser *p)
 {
 	p->specifier = return_specifier(**format);
-	if (p->specifier == ERROR)
-		ft_putstr_fd("Specifier error", 2);
 	return (0);
 }
 
@@ -68,5 +66,7 @@ int		get_specifier(t_parser *p, va_list **args)
 		read = process_wchar(p, args);
 	else if (p->specifier == CHARACTER)
 		read = process_character(p, args);
+	else if (p->specifier == ERROR)
+		return (-1);
 	return (read);
 }

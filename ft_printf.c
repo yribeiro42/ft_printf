@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 18:38:42 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/24 21:16:55 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ int 	process(va_list *args, char *format)
 		{
 			ft_bzero(&p, sizeof(t_parser));
 			parser(&format, &p);
-			ret = get_specifier(&p, &args);
+			if ((ret = get_specifier(&p, &args)) == -1)
+				return (0);
 		}
 		else
 		{

@@ -2,8 +2,8 @@
 
 int	main(void)
 {
-	printf("%.40", 42);
+	printf("%15.4d", -42);
 	printf("\n");
-	//ft_printf("%.40", 42);
+	ft_printf("%15.4d", -42);
 	return (0);
 }
