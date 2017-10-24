@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/23 22:42:22 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/24 18:30:31 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,3 +73,6 @@ char	*ft_strupper(char *s);
 int		process_unsigned(t_parser *p, va_list **args);
 int		process_wchar(t_parser *p, va_list **args);
 int		process_character(t_parser *p, va_list **args);
+void	process_space(char **str, t_parser *p);
+void	process_htag(char **str, t_parser *p);
+void	process_left(char **str, t_parser *p);

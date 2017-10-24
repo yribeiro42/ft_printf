@@ -6,12 +6,12 @@
 #    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/21 17:37:15 by yribeiro          #+#    #+#              #
-#    Updated: 2017/10/24 17:45:51 by yribeiro         ###   ########.fr        #
+#    Updated: 2017/10/24 19:32:26 by yribeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
-#NAME = printf
+#NAME = libftprintf.a
+NAME = printf
 
 #CFLAGS = -Wall -Wextra -Werror
 SRC = parser.c ft_printf.c main.c specifier.c processes.c process_int.c process_string.c \
@@ -30,8 +30,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C libft/
-	ar rc libftprintf.a $(OBJ) $(LIB_O)
-	#gcc $(CFLAGS) -o $(NAME) $^ -lm -L libft/ -lft
+	#ar rc libftprintf.a $(OBJ) $(LIB_O)
+	gcc $(CFLAGS) -o $(NAME) $^ -lm -L libft/ -lft
 
 clean:
 	make clean -C libft/

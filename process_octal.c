@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 15:52:05 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/24 18:14:59 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int		process_octal(t_parser *p, va_list **args)
 		process_precision(&retnbr, p);
 	if (p->width && p->zero)
 		process_zero(&retnbr, p);
-	if (p->htag)
-		retnbr = ft_strjoin("0", retnbr);
 	if (p->width && !p->precision)
+		process_width(&retnbr, p);
+	if (p->width)
 		process_width(&retnbr, p);
 	ft_putstr(retnbr);
 	return (ft_strlen(retnbr));
