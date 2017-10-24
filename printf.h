@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 18:30:31 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/24 22:32:59 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct 	s_parser
 	int				space;
 	int				htag;
 	int				zero;
+	int				neg;
 	unsigned int	width;
 	unsigned int	precision;
 	t_length		length;
@@ -61,7 +62,7 @@ int		parse_specifier(char **format, t_parser *p);
 int		process_int(t_parser *p, va_list **args);
 int		process_pointer(t_parser *p, va_list **args);
 int		process_string(t_parser *p, va_list **args);
-void	process_sign(char **str);
+void	process_sign(char **str, t_parser *p);
 void	process_width(char **str, t_parser *p);
 void	process_zero(char **str, t_parser *p);
 void	process_precision(char **str, t_parser *p);

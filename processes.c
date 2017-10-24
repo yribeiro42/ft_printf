@@ -2,9 +2,11 @@
 
 // sS p oO uU x X cC dDi
 
-void	process_sign(char **str)
+void	process_sign(char **str, t_parser *p)
 {
-	if (**str != '-')
+	if (p->neg)
+		*str = ft_strjoin("-", *str);
+	else if (**str != '-')
 		*str = ft_strjoin("+", *str);
 }
 
