@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 16:44:41 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 18:21:47 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int 	process(va_list *args, char *format)
 		{
 			ft_bzero(&p, sizeof(t_parser));
 			parser(&format, &p);
-			ret = get_specifier(&p, &args);
+			ret += get_specifier(&p, &args);
 		}
 		else
 		{
@@ -99,6 +99,7 @@ int		ft_printf(char *format, ...)
 	
 	va_start(args, format);
 	ret = process(&args, format);
+	//printf("\n[%d]", ret);
 	va_end(args);
 	return (ret);
 }

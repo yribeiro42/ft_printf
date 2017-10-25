@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   process_int.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
+/*   Updated: 2017/10/25 18:15:24 by yribeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 intmax_t	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
@@ -22,27 +34,6 @@ intmax_t	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
 	return (number);
 }
 
-void ft_switch(char **str)
-{
-  int i;
-
-  i = 0;
-   while (str[0][i] && str[0][i] != '0')
-    i++;
-  if (i != (int)ft_strlen(str[0]))
-    str[0][i] = '-';
-  i++;
-  while (str[0][i] && str[0][i] != '-')
-    i++;
-  if (i != (int)ft_strlen(str[0]))
-    str[0][i] = '0';
-}
-
-void	process_switch(char **str, t_parser *p)
-{
-	ft_switch(str);
-}
-
 int		process_int(t_parser *p, va_list **args)
 {
 	intmax_t	number;
@@ -56,7 +47,7 @@ int		process_int(t_parser *p, va_list **args)
 		process_precision(&str, p);
 	if (p->zero)
 		process_zero(&str, p);
-	if (p->showsign/* || p->neg*/)
+	if (p->showsign)
 		process_sign(&str, p);
 	if (p->space)
 		process_space(&str, p);

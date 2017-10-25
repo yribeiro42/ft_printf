@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 22:32:59 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/25 18:10:51 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,3 +77,5 @@ int		process_character(t_parser *p, va_list **args);
 void	process_space(char **str, t_parser *p);
 void	process_htag(char **str, t_parser *p);
 void	process_left(char **str, t_parser *p);
+void	ft_switch(char **str);
+void	process_switch(char **str, t_parser *p);

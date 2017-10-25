@@ -4,15 +4,8 @@
 
 void	process_sign(char **str, t_parser *p)
 {
-//	if (p->neg && p->width > 0)
-//	{
-//		*str = ft_strjoin("-", *str);
-//		p->width--;
-//	}
 	if (!p->neg)
-	{
 		*str = ft_strjoin("+", *str);
-	}
 }
 
 void	process_space(char **str, t_parser *p)

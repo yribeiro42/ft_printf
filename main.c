@@ -2,8 +2,12 @@
 
 int	main(void)
 {
-	printf("%0+5d", 42);
+	int	ret;
+
+
+	ret = printf("%s %s", "this", "is");
+	printf("\n[%d]\n", ret);
 	printf("\n");
-	ft_printf("%0+5d", 42);
+	ft_printf("%s %s", "this", "is");
 	return (0);
 }
