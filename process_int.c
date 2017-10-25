@@ -6,17 +6,17 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 18:15:24 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 19:49:50 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-intmax_t	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
+long long	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
 {
-	intmax_t number;
+	long number;
 
-	number = va_arg(**args, intmax_t);
+	number = va_arg(**args, long long);
 	if (p->length == HH)
 		number = (char)number;
 	else if (p->length == H)
@@ -36,7 +36,7 @@ intmax_t	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
 
 int		process_int(t_parser *p, va_list **args)
 {
-	intmax_t	number;
+	long long	number;
 	char 		*str;
 
 	number = get_number_length(p, args);

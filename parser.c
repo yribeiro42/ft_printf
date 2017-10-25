@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:17:00 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/23 20:35:24 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/25 19:47:02 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,12 @@ char	*parse_length(char **format, t_parser *p)			// hh h l ll j z
 	if (**format == 'l' && *(*format + 1) == 'l')
 	{
 		p->length = LL;
-		*(*format) = *(*format + 2);
+		*format += 2;
 	}
 	else if (**format == 'h' && *(*format + 1) == 'h')
 	{
 		p->length = HH;
-		*(*format) = *(*format + 2);
+		*format += 2;
 	}
 	else if (**format == 'h' || **format == 'l' || **format == 'j' || **format == 'z')
 	{
