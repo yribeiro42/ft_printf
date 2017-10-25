@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 15:17:54 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 16:17:38 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ int 	process(va_list *args, char *format)
 		{
 			ft_bzero(&p, sizeof(t_parser));
 			parser(&format, &p);
-			if ((ret = get_specifier(&p, &args)) == -1)
-				return (0);
+			ret = get_specifier(&p, &args);
 		}
 		else
 		{
