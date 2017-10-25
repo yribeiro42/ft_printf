@@ -22,6 +22,27 @@ intmax_t	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
 	return (number);
 }
 
+void ft_switch(char **str)
+{
+  int i;
+
+  i = 0;
+   while (str[0][i] && str[0][i] != '0')
+    i++;
+  if (i != (int)ft_strlen(str[0]))
+    str[0][i] = '-';
+  i++;
+  while (str[0][i] && str[0][i] != '-')
+    i++;
+  if (i != (int)ft_strlen(str[0]))
+    str[0][i] = '0';
+}
+
+void	process_switch(char **str, t_parser *p)
+{
+	ft_switch(str);
+}
+
 int		process_int(t_parser *p, va_list **args)
 {
 	intmax_t	number;
@@ -31,12 +52,11 @@ int		process_int(t_parser *p, va_list **args)
 	if (number < 0)
 		p->neg = 1;
 	str = ft_itoa(number);
-	//str = (number < 0) ? ft_itoa(-number) : ft_itoa(number);
 	if (p->precision)
 		process_precision(&str, p);
 	if (p->zero)
 		process_zero(&str, p);
-	if (p->showsign || p->neg)
+	if (p->showsign/* || p->neg*/)
 		process_sign(&str, p);
 	if (p->space)
 		process_space(&str, p);
@@ -46,6 +66,8 @@ int		process_int(t_parser *p, va_list **args)
 		process_zero(&str, p);
 	if (p->width)
 		process_width(&str, p);
+	if (p->neg && (p->zero || p->precision))
+		process_switch(&str, p);
 	ft_putstr(str);
 	return (ft_strlen(str));
 }

@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 16:17:38 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 16:44:41 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		parser(char **lookup, t_parser *p)
 	parse_specifier(lookup, p);
 	if (p->left)
 		p->zero = 0;
+	if (p->showsign)
+		p->space = 0;
 	return (0);
 }
 

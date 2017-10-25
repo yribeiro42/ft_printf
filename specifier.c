@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   specifier.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/24 21:15:26 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/25 16:34:04 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,7 @@ int		get_specifier(t_parser *p, va_list **args)
 		read = process_hex(p, args);
 	else if (p->specifier == UNSIGNEDECI)
 		read = process_unsigned(p, args);
-	else if (p->specifier == WIDECHAR)
-		read = process_wchar(p, args);
-	else if (p->specifier == CHARACTER)
+	else if (p->specifier == CHARACTER || p->specifier == WIDECHAR)
 		read = process_character(p, args);
 	else if (p->specifier == ERROR)
 		return (-1);

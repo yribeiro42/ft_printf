@@ -4,13 +4,15 @@
 
 void	process_sign(char **str, t_parser *p)
 {
-	if (p->neg)
+//	if (p->neg && p->width > 0)
+//	{
+//		*str = ft_strjoin("-", *str);
+//		p->width--;
+//	}
+	if (!p->neg)
 	{
-		*str = ft_strjoin("-", *str);
-		p->width--;
-	}
-	else if (**str != '-')
 		*str = ft_strjoin("+", *str);
+	}
 }
 
 void	process_space(char **str, t_parser *p)
@@ -43,7 +45,7 @@ void	process_width(char **str, t_parser *p)
 
 void	process_zero(char **str, t_parser *p)
 {
-	if (p->showsign || p->neg)
+	if ((p->showsign && !p->neg) && p->width > 0)
 		p->width--;
 	while (ft_strlen(*str) < p->width)
 		*str = ft_strjoin("0", *str);
