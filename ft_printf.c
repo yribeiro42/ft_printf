@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 21:43:34 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/25 15:17:54 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int		ft_printf(char *format, ...)
 	int		ret;
 
 	va_list args;
-
+	
 	va_start(args, format);
 	ret = process(&args, format);
 	va_end(args);

@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:07:32 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 12:08:54 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 16:10:08 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,9 @@ int		process_wchar(t_parser *p, va_list **args)
 	wchar_t		chr;
 	int			ret;
 
+	(void)p;
 	ret = 0;
-	ret = va_arg(**args, wchar_t);
+	chr = va_arg(**args, wchar_t);
 	ft_putwchar(ret);
 	ret = ft_wcharsize(ret);
 	return (ret);

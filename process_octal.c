@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 18:14:59 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 16:09:24 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int		process_octal(t_parser *p, va_list **args)
 {
 	intmax_t	number;
 	char		*retnbr;
-	char		*addstr;
-	int			offset;
 
 	number = va_arg(**args, unsigned int);
 	retnbr = ft_itoa_base(number, 8);

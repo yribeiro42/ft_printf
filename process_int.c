@@ -30,8 +30,8 @@ int		process_int(t_parser *p, va_list **args)
 	number = get_number_length(p, args);
 	if (number < 0)
 		p->neg = 1;
-	//str = ft_itoa(-number);
-	str = (number < 0) ? ft_itoa(-number) : ft_itoa(number);
+	str = ft_itoa(number);
+	//str = (number < 0) ? ft_itoa(-number) : ft_itoa(number);
 	if (p->precision)
 		process_precision(&str, p);
 	if (p->zero)

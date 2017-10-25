@@ -5,7 +5,10 @@
 void	process_sign(char **str, t_parser *p)
 {
 	if (p->neg)
+	{
 		*str = ft_strjoin("-", *str);
+		p->width--;
+	}
 	else if (**str != '-')
 		*str = ft_strjoin("+", *str);
 }
@@ -40,7 +43,7 @@ void	process_width(char **str, t_parser *p)
 
 void	process_zero(char **str, t_parser *p)
 {
-	if (p->showsign)
+	if (p->showsign || p->neg)
 		p->width--;
 	while (ft_strlen(*str) < p->width)
 		*str = ft_strjoin("0", *str);
@@ -48,8 +51,13 @@ void	process_zero(char **str, t_parser *p)
 
 void	process_precision(char **str, t_parser *p)
 {
-	while (ft_strlen(*str) < p->precision)
+	if (p->specifier == STRING)
+		*str = ft_strndup(*str, p->precision);
+	else
 	{
-		*str = ft_strjoin("0", *str);
+		while (ft_strlen(*str) < p->precision)
+		{
+			*str = ft_strjoin("0", *str);
+		}
 	}
 }
