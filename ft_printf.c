@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 19:40:20 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 22:45:45 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int 	process(va_list *args, char *format)
 		if (*format == '%' && *(format + 1) == '%')
 		{
 			ft_putchar('%');
-			format = format + 2;
+			format += 2;
 		}
 		if (*format == '%')
 		{
@@ -96,7 +96,7 @@ int		ft_printf(char *format, ...)
 	int		ret;
 
 	va_list args;
-	
+
 	va_start(args, format);
 	ret = process(&args, format);
 	//printf("\n[%d]", ret);

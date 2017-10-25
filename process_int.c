@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   process_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 19:49:50 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 22:31:35 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-long long	get_number_length(t_parser *p, va_list **args)	 // hh h l ll j z
+long long	get_number_length(t_parser *p, va_list **args)
 {
 	long number;
 
