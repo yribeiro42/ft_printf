@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 11:30:11 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 19:50:36 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/25 22:16:19 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void				ft_lstaddend(t_list **alst, t_list *node);
 char				*ft_strndup(char *s, size_t n);
 int					get_next_line(const int fd, char **line);
 char				*ft_itoa_base(unsigned int nbr, int base);
+char				*ft_itoa_base_u(unsigned long long nbr, int base);
 
 #endif

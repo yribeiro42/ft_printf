@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_itoa_base_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 15:01:58 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 22:14:07 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/25 22:15:34 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		compte(unsigned long nbr, int base)
+static int		compte(unsigned long long nbr, int base)
 {
 	int ret;
 
@@ -25,7 +25,7 @@ static int		compte(unsigned long nbr, int base)
 	return (ret);
 }
 
-char			*ft_itoa_base(unsigned int nbr, int base)
+char			*ft_itoa_base_u(unsigned long long nbr, int base)
 {
 	char	*retour;
 	int		nb;

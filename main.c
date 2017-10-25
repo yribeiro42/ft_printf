@@ -4,10 +4,9 @@ int	main(void)
 {
 	int	ret;
 
-
-	ret = printf("%lld", 12799999999);
+	ret = printf("%p", 140721448039903);
 	//printf("\n[%d]\n", ret);
 	printf("\n");
-	ft_printf("%lld", 12799999999);
+	ft_printf("%p", 140721448039903);
 	return (0);
 }
