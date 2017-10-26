@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 14:06:53 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 14:54:05 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 17:42:27 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,7 @@ void	process_width(char **str, t_parser *p)
 void	process_zero(char **str, t_parser *p)
 {
 	if (p->precision && p->specifier == DECIMAL)
-	{
 		return ;
-	}
 	if (p->htag && (p->specifier == LOWERHEX || p->specifier == UPPERHEX))
 		p->width -= 2;
 	if ((p->showsign && !p->neg) && p->width > 0)

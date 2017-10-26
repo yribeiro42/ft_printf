@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:17:00 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 19:47:02 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 17:30:26 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*parse_precision(char **format, t_parser *p) // .
 	ret = 0;
 	if (**format == '.')
 	{
+		p->dot = 1;
 		(*format)++;
 		while (ft_isdigit(**format))
 		{

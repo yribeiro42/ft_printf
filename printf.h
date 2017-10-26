@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 15:18:09 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 17:30:15 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct 	s_parser
 	int				i;
 	unsigned int	width;
 	unsigned int	precision;
+	int				dot;
 	t_length		length;
 	t_specifier		specifier;
 }				t_parser;

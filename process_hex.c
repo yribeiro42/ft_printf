@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:39:35 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 13:55:41 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 17:48:39 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,13 @@ int		process_hex(t_parser *p, va_list **args)
 	char		*retnbr;
 
 	number = get_xnumber_length(p, args);
+	if (!number && p->dot && !p->width)
+		return (0);
+	if (!number && !p->width)
+	{
+		ft_putchar('0');
+		return (1);
+	}
 	retnbr = ft_itoa_base_u(number, 16);
 	if (p->precision)
 		process_precision(&retnbr, p);
