@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/26 12:46:56 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 14:36:01 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int		parse_specifier(char **format, t_parser *p)
 		p->dmaj = 1;
 	else if (**format == 'O')
 		p->omaj = 1;
+	else if (**format == 'i')
+		p->i = 1;
 	p->specifier = return_specifier(**format);
 	return (0);
 }
