@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 18:10:51 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 12:45:38 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ typedef struct 	s_parser
 	int				htag;
 	int				zero;
 	int				neg;
+	int				umaj;
+	int				dmaj;
+	int				omaj;
 	unsigned int	width;
 	unsigned int	precision;
 	t_length		length;

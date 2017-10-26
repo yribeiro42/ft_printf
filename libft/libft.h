@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 11:30:11 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 22:16:19 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/26 12:16:13 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ char				*ft_strndup(char *s, size_t n);
 int					get_next_line(const int fd, char **line);
 char				*ft_itoa_base(unsigned int nbr, int base);
 char				*ft_itoa_base_u(unsigned long long nbr, int base);
+char				*ft_itoa_u(unsigned long long n);
 
 #endif

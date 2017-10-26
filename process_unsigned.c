@@ -3,30 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   process_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 17:26:51 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 22:28:05 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/26 12:48:08 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-long long	get_unumber_length(t_parser *p, va_list **args)
+unsigned long long	get_unumber_length(t_parser *p, va_list **args)
 {
-	long number;
+	unsigned long long number;
 
-	number = va_arg(**args, long long);
-	if (p->length == HH)
-		number = (char)number;
+	number = va_arg(**args, unsigned long long);
+	if (p->umaj)
+		number = (unsigned long)number;
+	else if (p->length == HH)
+		number = (unsigned char)number;
 	else if (p->length == H)
-		number = (short)number;
+		number = (unsigned int)number;
 	else if (p->length == L)
-		number = (long)number;
+		number = (unsigned long)number;
 	else if (p->length == LL)
-		number = (long long)number;
+		number = (unsigned long long)number;
 	else if (p->length == J)
-		number = (intmax_t)number;
+		number = (uintmax_t)number;
 	else if (p->length == Z)
 		number = (size_t)number;
 	else if (p->length == DEFAULT)
@@ -36,11 +38,11 @@ long long	get_unumber_length(t_parser *p, va_list **args)
 
 int		process_unsigned(t_parser *p, va_list **args)
 {
-	intmax_t	number;
+	unsigned long long	number;
 	char		*retnbr;
 
 	number = get_unumber_length(p, args);
-	retnbr = ft_itoa(number);
+	retnbr = ft_itoa_u(number);
 	if (p->precision)
 		process_precision(&retnbr, p);
 	if (p->left)

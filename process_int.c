@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/25 22:31:35 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/26 12:50:44 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ long long	get_number_length(t_parser *p, va_list **args)
 	long number;
 
 	number = va_arg(**args, long long);
-	if (p->length == HH)
+	if (p->dmaj)
+		number = (long)number;
+	else if (p->length == HH)
 		number = (char)number;
 	else if (p->length == H)
 		number = (short)number;

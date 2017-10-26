@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 09:50:21 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 12:12:42 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 12:19:00 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	nb_len(long long n)
+static size_t	nb_len(unsigned long long n)
 {
 	size_t	i;
 
@@ -22,7 +22,7 @@ static size_t	nb_len(long long n)
 	return (i);
 }
 
-char			*ft_itoa(long long n)
+char			*ft_itoa_u(unsigned long long n)
 {
 	char				*str;
 	size_t				str_len;
@@ -30,18 +30,11 @@ char			*ft_itoa(long long n)
 
 	str_len = nb_len(n);
 	nb = n;
-	if (n < 0)
-	{
-		nb = -n;
-		str_len++;
-	}
 	str = ft_strnew(str_len);
 	if (!str)
 		return (NULL);
 	str[--str_len] = nb % 10 + '0';
 	while (nb /= 10)
 		str[--str_len] = nb % 10 + '0';
-	if (n < 0)
-		*(str + 0) = '-';
 	return (str);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
+#    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 12:49:01 by yribeiro          #+#    #+#              #
-#    Updated: 2017/10/25 22:16:33 by anonymous        ###   ########.fr        #
+#    Updated: 2017/10/26 12:15:54 by yribeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ FILES		= 	ft_memset.c \
 				get_next_line.c \
 				ft_itoa_base.c \
 				ft_itoa_base_u.c \
+				ft_itoa_u.c \
 
 OBJ			= $(FILES:%.c=%.o)
 
