@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_octal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 19:12:24 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 21:50:25 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int					process_octal(t_parser *p, va_list **args)
 		ft_putchar('0');
 		return (1);
 	}
+	if (p->dot && !p->precision)
+		process_replace(&retnbr, p);
 	if (p->precision)
 		process_precision(&retnbr, p);
 	if (p->htag)

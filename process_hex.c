@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:39:35 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 17:48:39 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 21:47:53 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int		process_hex(t_parser *p, va_list **args)
 		return (1);
 	}
 	retnbr = ft_itoa_base_u(number, 16);
+	if (p->dot && !p->precision)
+		process_replace(&retnbr, p);
 	if (p->precision)
 		process_precision(&retnbr, p);
 	if (p->zero)

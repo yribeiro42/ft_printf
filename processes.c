@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   processes.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 14:06:53 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 17:58:20 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 21:55:35 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,17 @@ void	process_precision(char **str, t_parser *p)
 		{
 			*str = ft_strjoin("0", *str);
 		}
+	}
+}
+
+void	process_replace(char **str, t_parser *p)
+{
+	char	*find;
+
+	find = ft_strchr(*str, '0');
+	while (find)
+	{
+		*find = ' ';
+		find = ft_strchr(find + 1, '0');
 	}
 }
