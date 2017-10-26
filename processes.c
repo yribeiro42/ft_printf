@@ -6,13 +6,11 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 14:06:53 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 17:42:27 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 17:58:20 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-// sS p oO uU x X cC dDi
 
 void	process_sign(char **str, t_parser *p)
 {

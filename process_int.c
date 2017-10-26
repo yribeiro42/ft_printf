@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 14:40:04 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:33:10 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long long	get_number_length(t_parser *p, va_list **args)
 {
-	long number;
+	long	number;
 
 	number = va_arg(**args, long long);
 	if (p->dmaj)
@@ -39,7 +39,7 @@ long long	get_number_length(t_parser *p, va_list **args)
 int		process_int(t_parser *p, va_list **args)
 {
 	long long	number;
-	char 		*str;
+	char		*str;
 
 	number = get_number_length(p, args);
 	if (number < 0)

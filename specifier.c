@@ -6,12 +6,9 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/26 15:52:39 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:28:50 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// sS p oO uU x X cC dDi
-
 
 #include "printf.h"
 
@@ -42,7 +39,7 @@ t_specifier	return_specifier(char format)
 
 int		parse_specifier(char **format, t_parser *p)
 {
-	if	(**format == 'U')
+	if (**format == 'U')
 		p->umaj = 1;
 	else if (**format == 'D')
 		p->dmaj = 1;

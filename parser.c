@@ -6,12 +6,11 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:17:00 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 17:30:26 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:35:41 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
 
 char	*parse_flags(char **format, t_parser *p)
 {
@@ -36,7 +35,7 @@ char	*parse_flags(char **format, t_parser *p)
 
 char	*parse_width(char **format, t_parser *p)
 {
-	int ret;
+	int		ret;
 
 	ret = 0;
 	while (ft_isdigit(**format))
@@ -48,9 +47,9 @@ char	*parse_width(char **format, t_parser *p)
 	return (*format);
 }
 
-char	*parse_precision(char **format, t_parser *p) // .
+char	*parse_precision(char **format, t_parser *p)
 {
-	int ret;
+	int		ret;
 
 	ret = 0;
 	if (**format == '.')
@@ -67,7 +66,7 @@ char	*parse_precision(char **format, t_parser *p) // .
 	return (*format);
 }
 
-char	*parse_length(char **format, t_parser *p)			// hh h l ll j z
+char	*parse_length(char **format, t_parser *p)
 {
 	if (**format == 'l' && *(*format + 1) == 'l')
 	{

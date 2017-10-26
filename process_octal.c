@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 17:54:16 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:33:29 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 unsigned long long	get_onumber_length(t_parser *p, va_list **args)
 {
-	unsigned long long number;
+	unsigned long long	number;
 
 	number = va_arg(**args, unsigned long long);
 	if (p->omaj)
@@ -36,19 +36,12 @@ unsigned long long	get_onumber_length(t_parser *p, va_list **args)
 	return (number);
 }
 
-int		process_octal(t_parser *p, va_list **args)
+int					process_octal(t_parser *p, va_list **args)
 {
 	unsigned long long	number;
 	char				*retnbr;
 
 	number = get_onumber_length(p, args);
-	// if (!number && p->dot && !p->width)
-	// 	return (0);
-	// if (!number && !p->width)
-	// {
-	// 	ft_putchar('0');
-	// 	return (1);
-	// }
 	retnbr = ft_itoa_base_u(number, 8);
 	if (p->precision)
 		process_precision(&retnbr, p);

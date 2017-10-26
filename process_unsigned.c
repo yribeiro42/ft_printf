@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 17:26:51 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 12:48:08 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:34:03 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 unsigned long long	get_unumber_length(t_parser *p, va_list **args)
 {
-	unsigned long long number;
+	unsigned long long	number;
 
 	number = va_arg(**args, unsigned long long);
 	if (p->umaj)
@@ -36,10 +36,10 @@ unsigned long long	get_unumber_length(t_parser *p, va_list **args)
 	return (number);
 }
 
-int		process_unsigned(t_parser *p, va_list **args)
+int					process_unsigned(t_parser *p, va_list **args)
 {
 	unsigned long long	number;
-	char		*retnbr;
+	char				*retnbr;
 
 	number = get_unumber_length(p, args);
 	retnbr = ft_itoa_u(number);

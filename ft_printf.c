@@ -6,13 +6,11 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 15:28:53 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:41:18 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-// %[flags][width][.precision][length]specifier
 
 void	ft_copyuntil(char *str, char until)
 {
@@ -38,36 +36,14 @@ int		parser(char **lookup, t_parser *p)
 	return (0);
 }
 
-/*int 	process(va_list *args, char *format)
-{
-	t_parser p;
-	char	*lookup;
-	int		ret;
-
-	lookup = ft_strchr(format, '%');
-	if (!lookup)
-	{
-		ft_putstr(format);
-		return (ft_strlen(format));
-	}
-	else
-	{
-		ft_copyuntil(format, '%');
-		ft_bzero(&p, sizeof(t_parser));
-		parser(&lookup, &p);
-		ret = get_specifier(&p, &args);
-	}
-	return (ret);
-}*/
-
-
-int 	process(va_list *args, char *format)
+int		process(va_list *args, char *format)
 {
 	t_parser	p;
 	int			ret;
 	int			chrs;
 
 	chrs = 0;
+	ret = 0;
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -88,13 +64,11 @@ int 	process(va_list *args, char *format)
 
 int		ft_printf(char *format, ...)
 {
-	int		ret;
-
-	va_list args;
+	int			ret;
+	va_list		args;
 
 	va_start(args, format);
 	ret = process(&args, format);
-	//printf("%d\n", ret);
 	va_end(args);
 	return (ret);
 }
