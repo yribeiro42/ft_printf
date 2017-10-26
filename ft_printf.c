@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 21:50:06 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/26 21:57:36 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int		ft_printf(char *format, ...)
 
 	va_start(args, format);
 	ret = process(&args, format);
-	printf("(%d)\n", ret);
 	va_end(args);
 	return (ret);
 }
