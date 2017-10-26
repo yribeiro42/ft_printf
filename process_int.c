@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 18:33:10 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:44:05 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		process_int(t_parser *p, va_list **args)
 	if (p->width)
 		process_width(&str, p);
 	if (p->neg && (p->zero || p->precision))
-		process_switch(&str, p);
+		process_switch(&str);
 	ft_putstr(str);
 	return (ft_strlen(str));
 }

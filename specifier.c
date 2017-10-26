@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/26 18:28:50 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 18:43:37 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ int		get_specifier(t_parser *p, va_list **args)
 	else if (p->specifier == CHARACTER || p->specifier == WIDECHAR)
 		read = process_character(p, args);
 	else
-		read = process_error(p, args);
+		read = process_error(p);
 	return (read);
 }
