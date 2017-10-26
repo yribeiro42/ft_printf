@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/26 14:36:01 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 15:52:39 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ t_specifier	return_specifier(char format)
 		return (CHARACTER);
 	if (format == 'C')
 		return (WIDECHAR);
-	else
-		return (ERROR);
+	else if (format == '%')
+		return (format);
+	return (ERROR);
 }
 
 int		parse_specifier(char **format, t_parser *p)
@@ -49,6 +50,8 @@ int		parse_specifier(char **format, t_parser *p)
 		p->omaj = 1;
 	else if (**format == 'i')
 		p->i = 1;
+	if (p->specifier == ERROR)
+		return (0);
 	p->specifier = return_specifier(**format);
 	return (0);
 }
@@ -72,7 +75,7 @@ int		get_specifier(t_parser *p, va_list **args)
 		read = process_unsigned(p, args);
 	else if (p->specifier == CHARACTER || p->specifier == WIDECHAR)
 		read = process_character(p, args);
-	else if (p->specifier == ERROR)
-		return (-1);
+	else
+		read = process_error(p, args);
 	return (read);
 }

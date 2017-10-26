@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 12:51:18 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 15:28:53 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,13 @@ int		parser(char **lookup, t_parser *p)
 
 int 	process(va_list *args, char *format)
 {
-	t_parser p;
-	int		ret;
-	int		chrs;
+	t_parser	p;
+	int			ret;
+	int			chrs;
 
 	chrs = 0;
 	while (*format != '\0')
 	{
-		if (*format == '%' && *(format + 1) == '%')
-		{
-			ft_putchar('%');
-			format += 2;
-		}
 		if (*format == '%')
 		{
 			ft_bzero(&p, sizeof(t_parser));
@@ -99,6 +94,7 @@ int		ft_printf(char *format, ...)
 
 	va_start(args, format);
 	ret = process(&args, format);
+	//printf("%d\n", ret);
 	va_end(args);
 	return (ret);
 }

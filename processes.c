@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 14:06:53 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 14:40:14 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 14:54:05 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	process_left(char **str, t_parser *p)
 
 void	process_htag(char **str, t_parser *p)
 {
-	if (p->specifier == LOWERHEX)
+	if (p->specifier == LOWERHEX || p->specifier == POINTER)
 		*str = ft_strjoin("0x", *str);
 	if (p->specifier == UPPERHEX)
 		*str = ft_strjoin("0X", *str);
