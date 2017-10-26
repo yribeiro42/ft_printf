@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 13:04:11 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 13:19:52 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int		process_octal(t_parser *p, va_list **args)
 	retnbr = ft_itoa_base_u(number, 8);
 	if (p->precision)
 		process_precision(&retnbr, p);
+	if (p->htag)
+		process_htag(&retnbr, p);
+	if (p->left)
+		process_left(&retnbr, p);
 	if (p->width && p->zero)
 		process_zero(&retnbr, p);
 	if (p->width && !p->precision)

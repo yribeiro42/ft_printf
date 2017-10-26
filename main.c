@@ -4,9 +4,9 @@ int	main(void)
 {
 	int	ret;
 
-	ret = printf("%hU", 4294967296);
+	ret = printf("%#08x", 42);
 	//printf("\n[%d]\n", ret);
 	printf("\n");
-	ft_printf("%hU", 4294967296);
+	ft_printf("%#08x", 42);
 	return (0);
 }
