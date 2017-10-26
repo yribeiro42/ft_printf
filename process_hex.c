@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:39:35 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 13:24:17 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/26 13:55:41 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ int		process_hex(t_parser *p, va_list **args)
 		process_htag(&retnbr, p);
 	if (p->left)
 		process_left(&retnbr, p);
-	if (p->width && !p->precision)
-		process_width(&retnbr, p);
 	if (p->width)
 		process_width(&retnbr, p);
 	if (p->specifier == UPPERHEX)

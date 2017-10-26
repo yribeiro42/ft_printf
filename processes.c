@@ -38,6 +38,8 @@ void	process_width(char **str, t_parser *p)
 
 void	process_zero(char **str, t_parser *p)
 {
+	if (p->htag && p->specifier == LOWERHEX)
+		p->width -= 2;
 	if ((p->showsign && !p->neg) && p->width > 0)
 		p->width--;
 	while (ft_strlen(*str) < p->width)
