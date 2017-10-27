@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/26 18:43:37 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 19:46:01 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_specifier	return_specifier(char format)
 		return (CHARACTER);
 	if (format == 'C')
 		return (WIDECHAR);
-	else if (format == '%')
+	else if (format != '\n')
 		return (format);
 	return (ERROR);
 }

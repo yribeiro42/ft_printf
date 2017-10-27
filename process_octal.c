@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/27 17:02:52 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 19:24:49 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ unsigned long long	get_onumber_length(t_parser *p, va_list **args)
 	else if (p->length == HH)
 		number = (unsigned char)number;
 	else if (p->length == H)
-		number = (unsigned int)number;
+		number = (unsigned short)number;
 	else if (p->length == L)
 		number = (unsigned long)number;
 	else if (p->length == LL)

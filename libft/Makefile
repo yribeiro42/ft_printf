@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
+#    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/24 12:49:01 by yribeiro          #+#    #+#              #
-#    Updated: 2017/10/26 21:59:56 by anonymous        ###   ########.fr        #
+#    Updated: 2017/10/27 17:30:36 by yribeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ FILES		= 	ft_memset.c \
 				ft_itoa_base_u.c \
 				ft_itoa_u.c \
 				ft_strjoin_free.c \
+				ft_putnstr.c \
 
 OBJ			= $(FILES:%.c=%.o)
 

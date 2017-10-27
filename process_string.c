@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 15:14:04 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/27 16:30:13 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 20:04:15 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ int		process_string(t_parser *p, va_list **args)
 	str = ft_strdup(va_arg(**args, char*));
 	if (!str)
 		str = ft_strdup("(null)");
-	if (p->precision)
+	if (p->dot)
 		process_precision(&str, p);
+	if (p->width && p->zero)
+		process_zero(&str, p);
 	if (p->left)
 		process_left(&str, p);
 	if(p->width)
