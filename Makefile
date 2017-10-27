@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
+#    By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/21 17:37:15 by yribeiro          #+#    #+#              #
-#    Updated: 2017/10/26 21:56:17 by anonymous        ###   ########.fr        #
+#    Updated: 2017/10/27 16:20:15 by yribeiro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-#NAME = printf
+NAMET = printf
 
 #CFLAGS = -Wall -Wextra -Werror
 SRC = parser.c ft_printf.c specifier.c processes.c process_int.c process_string.c \
@@ -31,7 +31,10 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	make -C libft/
 	ar rc libftprintf.a $(OBJ) $(LIB_O)
-	#gcc $(CFLAGS) -o $(NAME) $^ -lm -L libft/ -lft
+	
+
+test: $(OBJ)
+	gcc $(CFLAGS) -o $(NAMET) $^ -lm -L libft/ -lft
 
 clean:
 	make clean -C libft/

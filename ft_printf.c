@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 12:03:28 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 21:57:36 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/27 15:49:14 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ int		parser(char **lookup, t_parser *p)
 	parse_precision(lookup, p);
 	parse_length(lookup, p);
 	parse_specifier(lookup, p);
+	if (!**lookup)
+		return (0);
 	if (p->left)
 		p->zero = 0;
 	if (p->showsign)
 		p->space = 0;
-	return (0);
+	return (1);
 }
 
 int		process(va_list *args, char *format)
@@ -49,7 +51,8 @@ int		process(va_list *args, char *format)
 		if (*format == '%')
 		{
 			ft_bzero(&p, sizeof(t_parser));
-			parser(&format, &p);
+			if (!parser(&format, &p))
+				return (0);
 			ret += get_specifier(&p, &args);
 		}
 		else

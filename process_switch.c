@@ -12,6 +12,22 @@
 
 #include "printf.h"
 
+int		print_ret(char **s)
+{
+	int ret;
+
+	ft_putstr(*s);
+	ret = ft_strlen(*s);
+	ft_strdel(s);
+	return (ret);
+}
+
+int		print_char(char c)
+{
+	ft_putchar(c);
+	return (1);
+}
+
 void	ft_switch(char **str)
 {
 	int	i;

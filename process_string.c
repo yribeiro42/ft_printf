@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 15:14:04 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 18:29:41 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 16:30:13 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 int		process_string(t_parser *p, va_list **args)
 {
 	char	*str;
+	int		ret;
 
-	str = va_arg(**args, char*);
+	str = ft_strdup(va_arg(**args, char*));
 	if (!str)
-		str = "(null)";
+		str = ft_strdup("(null)");
 	if (p->precision)
 		process_precision(&str, p);
 	if (p->left)
@@ -26,5 +27,7 @@ int		process_string(t_parser *p, va_list **args)
 	if(p->width)
 		process_width(&str, p);
 	ft_putstr(str);
-	return (ft_strlen(str));
+	ret = ft_strlen(str);
+	ft_strdel(&str);
+	return (ret);
 }

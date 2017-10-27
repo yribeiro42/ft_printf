@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 18:44:05 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 17:01:48 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,12 @@ int		process_int(t_parser *p, va_list **args)
 	if (number < 0)
 		p->neg = 1;
 	str = ft_itoa(number);
-	if (p->precision)
+	if (p->dot &&  !p->precision && number == 0)
+	{	
+		ft_strdel(&str);
+		str = ft_strdup("");
+	}
+	if (p->dot)
 		process_precision(&str, p);
 	if (p->zero)
 		process_zero(&str, p);
@@ -55,12 +60,12 @@ int		process_int(t_parser *p, va_list **args)
 		process_space(&str, p);
 	if (p->left)
 		process_left(&str, p);
-	if (p->width && p->zero)
-		process_zero(&str, p);
 	if (p->width)
 		process_width(&str, p);
 	if (p->neg && (p->zero || p->precision))
 		process_switch(&str);
 	ft_putstr(str);
-	return (ft_strlen(str));
+	number = ft_strlen(str);
+	ft_strdel(&str);
+	return (number);
 }

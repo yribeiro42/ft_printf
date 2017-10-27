@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_octal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 21:50:25 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/27 17:02:52 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,17 @@ int					process_octal(t_parser *p, va_list **args)
 		ft_putchar('0');
 		return (1);
 	}
+	if (p->dot &&  !p->precision && number == 0)
+	{	
+		ft_strdel(&retnbr);
+		retnbr = ft_strdup("");
+	}
 	if (p->dot && !p->precision)
 		process_replace(&retnbr, p);
 	if (p->precision)
 		process_precision(&retnbr, p);
+	if (p->zero)
+		process_zero(&retnbr, p);
 	if (p->htag)
 		process_htag(&retnbr, p);
 	if (p->left)
@@ -63,5 +70,7 @@ int					process_octal(t_parser *p, va_list **args)
 	if (p->width)
 		process_width(&retnbr, p);
 	ft_putstr(retnbr);
-	return (ft_strlen(retnbr));
+	number = ft_strlen(retnbr);
+	ft_strdel(&retnbr);
+	return (number);
 }

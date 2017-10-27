@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:39:35 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 21:47:53 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/27 16:49:09 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,15 @@ long long	get_xnumber_length(t_parser *p, va_list **args)
 
 char	*ft_strupper(char *s)
 {
-	char	*cpy;
 	int		i;
 
 	i = 0;
-	cpy = ft_strnew(ft_strlen(s) + 1);
 	while (s[i] != '\0')
 	{
-		cpy[i] = ft_toupper(s[i]);
+		s[i] = ft_toupper(s[i]);
 		i++;
 	}
-	cpy[i] = '\0';
-	return (cpy);
+	return (s);
 }
 
 int		process_hex(t_parser *p, va_list **args)
@@ -59,10 +56,7 @@ int		process_hex(t_parser *p, va_list **args)
 	if (!number && p->dot && !p->width)
 		return (0);
 	if (!number && !p->width)
-	{
-		ft_putchar('0');
-		return (1);
-	}
+		return (print_char('0'));
 	retnbr = ft_itoa_base_u(number, 16);
 	if (p->dot && !p->precision)
 		process_replace(&retnbr, p);
@@ -78,6 +72,5 @@ int		process_hex(t_parser *p, va_list **args)
 		process_width(&retnbr, p);
 	if (p->specifier == UPPERHEX)
 		retnbr = ft_strupper(retnbr);
-	ft_putstr(retnbr);
-	return (ft_strlen(retnbr));
+	return (print_ret(&retnbr));
 }

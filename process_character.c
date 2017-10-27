@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 22:37:31 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/26 17:57:41 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 17:22:14 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		process_character(t_parser *p, va_list **args)
 {
 	char	chr;
 	char	*str;
+	int		ret;
 
 	chr = (char)va_arg(**args, int);
 	str = malloc(sizeof(*str) * 2);
@@ -31,5 +32,7 @@ int		process_character(t_parser *p, va_list **args)
 	if (p->width)
 		process_width(&str, p);
 	ft_putstr(str);
-	return (ft_strlen(str));
+	ret = ft_strlen(str);
+	ft_strdel(&str);
+	return (ret);
 }

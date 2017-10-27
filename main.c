@@ -4,9 +4,9 @@ int	main(void)
 {
 	int	ret;
 
-	ret = printf("%03.2d", -1);
-	printf("\n[%d]\n", ret);
+	//ret = printf("%2c", 0);
+	//printf("\n[%d]\n", ret);
 	//printf("\n");
-	ft_printf("%03.2d", -1);
+	ft_printf("%2c", 0);
 	return (0);
 }

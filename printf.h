@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 16:11:25 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 18:42:11 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 16:48:55 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,3 +85,6 @@ void	process_left(char **str, t_parser *p);
 void	ft_switch(char **str);
 void	process_switch(char **str);
 int		process_error(t_parser *p);
+void	process_replace(char **str, t_parser *p);
+int		print_ret(char **s);
+int		print_char(char c);
