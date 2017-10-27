@@ -6,13 +6,13 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 17:37:51 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/27 19:46:01 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 20:36:59 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-t_specifier	return_specifier(char format)
+t_specifier		return_specifier(char format)
 {
 	if (format == 'd' || format == 'D' || format == 'i')
 		return (DECIMAL);
@@ -37,7 +37,7 @@ t_specifier	return_specifier(char format)
 	return (ERROR);
 }
 
-int		parse_specifier(char **format, t_parser *p)
+int				parse_specifier(char **format, t_parser *p)
 {
 	if (**format == 'U')
 		p->umaj = 1;
@@ -53,7 +53,7 @@ int		parse_specifier(char **format, t_parser *p)
 	return (0);
 }
 
-int		get_specifier(t_parser *p, va_list **args)
+int				get_specifier(t_parser *p, va_list **args)
 {
 	int		read;
 

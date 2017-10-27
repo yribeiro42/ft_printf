@@ -1,16 +1,22 @@
 /* ************************************************************************** */
-/*	                                                                        */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   process_error.c                                    :+:      :+:    :+:   */
+/*   process_switch.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 15:11:27 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/26 17:57:53 by yribeiro         ###   ########.fr       */
+/*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
+/*   Updated: 2017/10/27 20:23:49 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+
+void	process_emptystring(char **str)
+{
+	ft_strdel(str);
+	*str = ft_strdup("");
+}
 
 int		print_ret(char **s)
 {

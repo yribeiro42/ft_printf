@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoineg.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 11:23:46 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/24 22:39:14 by anonymous        ###   ########.fr       */
+/*   Updated: 2017/10/27 20:37:59 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int		ft_atoi(const char *str)
 	if (negative == 1)
 		return (-result);
 	else
-	return (result);
+		return (result);
 }

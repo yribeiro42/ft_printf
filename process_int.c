@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/27 17:01:48 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 20:24:14 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,16 @@ long long	get_number_length(t_parser *p, va_list **args)
 	return (number);
 }
 
-int		process_int(t_parser *p, va_list **args)
+int			process_int(t_parser *p, va_list **args)
 {
 	long long	number;
 	char		*str;
 
 	number = get_number_length(p, args);
-	if (number < 0)
-		p->neg = 1;
+	p->neg = (number < 0) ? 1 : 0;
 	str = ft_itoa(number);
-	if (p->dot &&  !p->precision && number == 0)
-	{	
-		ft_strdel(&str);
-		str = ft_strdup("");
-	}
+	if (p->dot && !p->precision && number == 0)
+		process_emptystring(&str);
 	if (p->dot)
 		process_precision(&str, p);
 	if (p->zero)
@@ -64,8 +60,5 @@ int		process_int(t_parser *p, va_list **args)
 		process_width(&str, p);
 	if (p->neg && (p->zero || p->precision))
 		process_switch(&str);
-	ft_putstr(str);
-	number = ft_strlen(str);
-	ft_strdel(&str);
-	return (number);
+	return (print_ret(&str));
 }

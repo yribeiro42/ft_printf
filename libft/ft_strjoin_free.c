@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 21:59:23 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/26 21:59:36 by anonymous        ###   ########.fr       */
+/*   Created: 2017/10/25 18:14:02 by yribeiro          #+#    #+#             */
+/*   Updated: 2017/10/27 20:42:07 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

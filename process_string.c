@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 15:14:04 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/27 20:04:15 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 20:20:09 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		process_string(t_parser *p, va_list **args)
 		process_zero(&str, p);
 	if (p->left)
 		process_left(&str, p);
-	if(p->width)
+	if (p->width)
 		process_width(&str, p);
 	ft_putstr(str);
 	ret = ft_strlen(str);

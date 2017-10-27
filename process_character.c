@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 22:37:31 by anonymous         #+#    #+#             */
-/*   Updated: 2017/10/27 19:13:55 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 20:41:02 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char		*fill_character(char c, size_t size)
 {
-	char		*ret;
+	char	*ret;
 
-	size = (!size) ? size : (size - 1); 
+	size = (!size) ? size : (size - 1);
 	if (!(ret = ft_strnew(size)))
 		exit(1);
 	ft_memset(ret, c, size);
 	return (ret);
 }
 
-int		process_nullchar(t_parser *p, char *width)
+int			process_nullchar(t_parser *p, char *width)
 {
 	int		ret;
 	int		i;
@@ -44,11 +44,10 @@ int		process_nullchar(t_parser *p, char *width)
 	return (ret);
 }
 
-int		process_character(t_parser *p, va_list **args)
+int			process_character(t_parser *p, va_list **args)
 {
 	char	chr;
 	char	*str;
-	int		ret;
 	char	*width;
 
 	chr = (char)va_arg(**args, int);
@@ -66,5 +65,4 @@ int		process_character(t_parser *p, va_list **args)
 	if (p->width)
 		process_width(&str, p);
 	return (print_ret(&str));
-
 }

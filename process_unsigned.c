@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 17:26:51 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/27 19:39:22 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 20:19:22 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,3 @@ int					process_unsigned(t_parser *p, va_list **args)
 		process_width(&retnbr, p);
 	return (print_ret(&retnbr));
 }
-
-
-
-

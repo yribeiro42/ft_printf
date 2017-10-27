@@ -6,7 +6,7 @@
 /*   By: yribeiro <yribeiro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/23 16:26:31 by yribeiro          #+#    #+#             */
-/*   Updated: 2017/10/27 19:24:49 by yribeiro         ###   ########.fr       */
+/*   Updated: 2017/10/27 20:41:50 by yribeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,11 @@ int					process_octal(t_parser *p, va_list **args)
 	number = get_onumber_length(p, args);
 	retnbr = ft_itoa_base_u(number, 8);
 	if (!number && p->htag)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	if (p->dot &&  !p->precision && number == 0)
-	{	
-		ft_strdel(&retnbr);
-		retnbr = ft_strdup("");
-	}
+		return (print_char('0'));
+	if (p->dot && !p->precision && number == 0)
+		process_emptystring(&retnbr);
 	if (p->dot && !p->precision)
-		process_replace(&retnbr, p);
+		process_replace(&retnbr);
 	if (p->precision)
 		process_precision(&retnbr, p);
 	if (p->zero)
@@ -63,14 +57,7 @@ int					process_octal(t_parser *p, va_list **args)
 		process_htag(&retnbr, p);
 	if (p->left)
 		process_left(&retnbr, p);
-	if (p->width && p->zero)
-		process_zero(&retnbr, p);
-	if (p->width && !p->precision)
-		process_width(&retnbr, p);
 	if (p->width)
 		process_width(&retnbr, p);
-	ft_putstr(retnbr);
-	number = ft_strlen(retnbr);
-	ft_strdel(&retnbr);
-	return (number);
+	return (print_ret(&retnbr));
 }
